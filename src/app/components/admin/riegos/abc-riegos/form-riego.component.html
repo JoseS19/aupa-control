@@ -1,0 +1,54 @@
+<ab-header></ab-header>
+<div>
+  <div class="" id="">
+    <div id="page-content-wrapper justify-content-center">
+      <div class="container pt-4">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="pl-3 pt-3">{{ encabezado }}</h3>
+          </div>
+          <div class="card-body">
+            <form>
+                <div class="inline mx-4 mb-3">
+                  <label for="" class="font-weight-bold">Cultivo</label>
+                  <input type="text" [(ngModel)]="riego.cultivo" name="Cultivo" class="form-control" placeholder="Cultivo" required>
+                </div>
+              <div class="inline mx-4 mb-3">
+                <label for="" class="font-weight-bold">Superficie (No. Lote - No. Cuenta - Sección)</label>
+                <br>
+                <select class="col-md-12 form-control" id="" name="Usuario" [(ngModel)]="riego.id_superficie" required>
+                  <option *ngFor="let superficie of superficies" [value]="superficie.id_superficie">
+                    {{superficie.lote}} - {{superficie.num_cuenta}} - {{superficie.seccion}}
+                  </option>
+                </select>
+              </div>
+              <div class="inline mx-4 mb-3">
+                <label for="" class="font-weight-bold">Fecha de inicio</label>
+                <input type="date" [(ngModel)]="riego.inicio" name="Fecha de inicio" class="form-control" placeholder="Fecha de inicio" required>
+              </div>
+              <div class="inline mx-4 mb-3">
+                <label for="" class="font-weight-bold">Cantidad total de millares</label>
+                <input type="number" [(ngModel)]="riego.total" name="Cantidad total" class="form-control" placeholder="Cantidad de millares total" required>
+              </div>
+              <div class="row justify-content-center mt-4">
+                <button class="btn btn-danger mr-4" routerLink="/riegos">
+                  <svg width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                  Volver al listado
+                </button>
+                <button class="btn btn-success" (click)="editando ? updateRiego(): submitRiego()"> 
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                  {{ boton }}
+                </button>
+              </div>
+            </form>
+        </div>
+      </div>    
+    </div>
+  </div>
+</div>

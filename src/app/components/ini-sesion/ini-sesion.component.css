@@ -1,0 +1,31 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+#contenido{
+  border: solid;
+  background-color: rgba(141, 140, 140, 0.040);
+  border-color: rgba(102, 106, 122, 0.455);
+  border-radius: 25px;
+}
+div.caja{
+  width: 15rem;
+}
+button#iniciar{
+  background-color: #1087f7;
+}
+
+#cont{  
+  border: solid;
+  background-color: rgba(141, 140, 140, 0.040);
+  border-color: rgba(102, 106, 122, 0.455);
+
+/*
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  padding-left: 3.75rem;
+  padding-right: 3.75rem;
+  padding-top: 2.5rem;
+
+  */
+}

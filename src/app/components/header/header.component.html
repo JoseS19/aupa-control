@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <a class="navbar-brand" routerLink="/menu">
+  AUPA 5
+  </a>
+  <div *ngIf="sesion">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+<div class="collapse navbar-collapse" id="navbarsExample03">
+  <ul class="navbar-nav pr-auto">
+     <li class="nav-item" *ngIf="sesion">
+      <a class="nav-link active link" routerLink="/mapa">Mapa</a>
+    </li>
+     <li class="nav-item" *ngIf="sesion">
+      <a class="nav-link active link" routerLink="/riegos">Riegos</a>
+    </li>
+    <li class="nav-item" *ngIf="sesion">
+      <a class="nav-link active link" routerLink="/usuarios">Mi cuenta</a>
+    </li>
+  </ul>
+</div>
+<div class="collapse navbar-collapse" id="navbarsExample03">
+  <ul *ngIf="sesion" class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <li class="nav-item">
+        <a class="nav-link active link" routerLink="#" (click)="onLogout()">Cerrar sesion</a>
+    </li>
+  </ul>
+</div>
+</nav>

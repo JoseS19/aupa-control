@@ -1,0 +1,76 @@
+<ab-header></ab-header>
+<div class="container-fluid">
+
+    <div class="container-fluid mt-4 px-md-5 mt-md-4" *ngIf="isAdmin"> <!--Admin-->
+        <h3 class="text-center text-secondary mt-3">Padrón de registros</h3>
+        <div class="justify-content-center row px-md-4 contenedor">
+            <div class="col-6 col-md-3 mt-4" routerLink="/usuarios">
+                <button class="btn btn-block border-warning btn-dir" id="btn-cuenta">
+                    <svg width="3.125em" height="3.125em" fill="currentColor" class="mt-3" viewBox="0 0 16 16">
+                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                    </svg>
+                    <p class="pt-4 font-weight-bold">Control de usuarios AUPA5</p>
+                </button>
+            </div>
+            <div class="col-6 col-md-3 mt-4"  routerLink="/riegos" *ngIf="isAdmin">
+                <button class="btn btn-block border-primary btn-dir" id="btn-control">
+                    <svg width="3.125em" height="3.125em" fill="currentColor" class="mt-3" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z"/>
+                    </svg>
+                    <p class="pt-4 font-weight-bold">Control de riegos capturados</p>
+                    <p></p>
+                </button>
+            </div>
+            <div class="col-6 col-md-3 mt-4 pb-4 btn-admin" routerLink="/superficies" *ngIf="isAdmin">
+                <button class="btn btn-block border-success btn-dir" id="btn-mapa">
+                    <svg width="3.125em" height="3.125em" fill="currentColor" class="mt-3" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
+                    </svg>
+                    <p class="pt-4 font-weight-bold">Control de superficies</p>
+                </button>
+            </div>
+            <div class="col-6 col-md-3 mt-4 btn-admin" routerLink="/empleados" *ngIf="isAdmin">
+                <button class="btn btn-block border-warning btn-dir" id="btn-cuenta">
+                    <svg width="3.125em" height="3.125em" fill="currentColor" class="mt-3" viewBox="0 0 16 16">
+                        <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"/>
+                    </svg>
+                    <p class="pt-4 font-weight-bold">Control de empleados</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-5">
+        <h3 class="text-center text-secondary">Funciones</h3>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-8 col-xs-12 mx-3 my-4 mx-md-4 my-md-3" *ngIf="isAdmin==false" routerLink="/riegos">
+                <button class="btn btn-block border-primary btn-dir" id="btn-control"> 
+                    <svg class="mt-3" width="3.125em" height="3.125em" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10c0 0 2.5 1.5 5 .5s5-.5 5-.5c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                        <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z"/>
+                    </svg>
+                    <p class="pt-4 font-weight-bold">Control de cantidades</p>  
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-8 col-xs-12 mx-3 my-4 mx-md-4 my-md-3" routerLink="/mapa">
+                <button class="btn btn-block border-success btn-dir" id="btn-mapa">
+                    <svg class="mt-3" width="3.125em" height="3.125em" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                    </svg>
+                    <p class="pt-4 font-weight-bold">Mapa</p>
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-8 col-xs-12 mx-3 my-4 mx-md-4 my-md-3" routerLink="/cuenta">
+                <button class="btn btn-block border-warning btn-dir" id="btn-cuenta">
+                    <svg  class="mt-3" width="3.125em" height="3.125em" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                    </svg>
+                    <p class="pt-4 font-weight-bold">Mi cuenta</p>
+                </button> 
+            </div>
+        </div>
+    </div>
+</div>

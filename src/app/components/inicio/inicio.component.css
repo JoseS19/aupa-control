@@ -1,0 +1,28 @@
+.bd-placeholder-img {
+    background-image: url(./imgn/siembra1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 0px;
+  }
+h1#empresa{
+    font-weight: 2rem;
+    background-color: darkgoldenrod;
+}
+
+footer{
+  background-color: rgb(33, 80, 49);
+  border-top: solid  rgb(6, 134, 23) .1rem;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
