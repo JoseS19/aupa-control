@@ -20,6 +20,7 @@ export class MapaComponent{
     }
 
     superficies: Superficie[] =  [];
+    poligonos: Superficie[] =  [];
     superficiesRiego: Superficie[] =  [];
     lat: number;
     lng: number;
@@ -39,6 +40,7 @@ export class MapaComponent{
           .subscribe(
             res => {
               this.superficies = res;
+              console.log(res);
               this.fromatear_coords(res);
             },
             err => {
@@ -50,6 +52,7 @@ export class MapaComponent{
         this.superficieService.getSuperficiesMapaRiego()
         .subscribe(
             res => {
+              console.log(res);
                 this.superficiesRiego = res;
                 this.unir();
             },
@@ -82,11 +85,12 @@ export class MapaComponent{
 
     unir(){
         for(let i=0; i<this.superficies.length; i++){
+            this.poligonos[i] = this.superficies[i];
             for(let x=0; x<this.superficiesRiego.length; x++){
-                if(this.superficies[i].id_superficie == this.superficiesRiego[x].id_superficie){
-                    this.superficies[i].total = this.superficiesRiego[x].total;
-                    this.superficies[i].restante = this.superficiesRiego[x].restante;
-                    this.superficies[i].id_riego = this.superficiesRiego[x].id_riego;
+                if(this.poligonos[i].id_superficie == this.superficiesRiego[x].id_superficie){
+                    this.poligonos[i].total = this.superficiesRiego[x].total;
+                    this.poligonos[i].restante = this.superficiesRiego[x].restante;
+                    this.poligonos[i].id_riego = this.superficiesRiego[x].id_riego;
                 }
             }
         }

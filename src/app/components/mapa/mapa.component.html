@@ -1,7 +1,7 @@
 <ab-header></ab-header>
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
 
-  <agm-polygon *ngFor="let polygon of superficies" [paths]="polygon.poligono" [strokeColor]="'green'" [fillColor]="'green'" [fillOpacity]="0.15">
+  <agm-polygon *ngFor="let polygon of poligonos" [paths]="polygon.poligono" [strokeColor]="'green'" [fillColor]="'green'" [fillOpacity]="0.15">
 
     <agm-marker [latitude]="polygon.centro.lat" [longitude]="polygon.centro.lng"  [visible]="true">
         <agm-info-window [disableAutoPan]="false" [isOpen]="visible">

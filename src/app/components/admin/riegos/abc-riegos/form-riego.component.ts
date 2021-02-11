@@ -101,6 +101,7 @@ export class FormRiegoComponent{
   }
 
   submitRiego(){
+    console.log(this.riego);
     this.riego.ultima_mod = this.riego.inicio;
     this.riego.restante = this.riego.total;
     this.riegoService.createRiego(this.riego).subscribe(
@@ -116,6 +117,7 @@ export class FormRiegoComponent{
 
   updateRiego(){
     this.riego.ultima_mod = this.riego.inicio;
+    console.log(this.riego);
     this.riegoService.updateRiego(this.riego.id_riego.toString(), this.riego)
     .subscribe(
       res=>{

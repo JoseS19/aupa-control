@@ -18,7 +18,7 @@
                 <br>
                 <select class="col-md-12 form-control" id="" name="Usuario" [(ngModel)]="riego.id_superficie" required>
                   <option *ngFor="let superficie of superficies" [value]="superficie.id_superficie">
-                    {{superficie.lote}} - {{superficie.num_cuenta}} - {{superficie.seccion}}
+                    {{superficie.lote}} - {{superficie.num_cuenta}} - {{superficie.seccion}} - {{superficie.id_superficie}}
                   </option>
                 </select>
               </div>
