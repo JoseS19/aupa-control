@@ -9,7 +9,7 @@ import { Empleado } from '../models/empleado';
 export class EmpleadoService {
 
   BASE_URL:string ='https://thawing-taiga-33568.herokuapp.com/api/auth';   //Api2
-  //BASE_URL:string ='http://127.0.0.1:8000/api';
+  // BASE_URL:string ='http://127.0.0.1:8000/api';
   constructor(private httpClient:HttpClient, ) { }
   
   getEmpleados(): Observable<Empleado[]>{
