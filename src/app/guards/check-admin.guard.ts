@@ -11,11 +11,10 @@ export class CheckAdminGuard implements CanActivate {
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree{
     const admin = localStorage.getItem('admin');
     if(admin == '1'){
-     // return true;
+      return true;
     }else{
       this.router.navigate(['/menu'])
-      //return false;
+      return false;
     }
-    return true;
   }
 }

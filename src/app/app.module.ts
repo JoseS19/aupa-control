@@ -70,7 +70,7 @@ import {  } from '@angular/forms';
       { path: "usuario/añadir", component: FormUsuarioComponent, canActivate: [CheckAdminGuard, CheckLoginGuard] },
       { path: "usuario/editar/:id", component: FormUsuarioComponent, canActivate: [CheckAdminGuard, CheckLoginGuard] },
       { path: "empleados", component: EmpleadosComponent, canActivate: [CheckAdminGuard, CheckLoginGuard] },
-      { path: "empleado/añadir", component: FormEmpleadoComponent, canActivate: [CheckAdminGuard, CheckLoginGuard] },
+      { path: "empleado/añadir", component: FormEmpleadoComponent },
       { path: "empleado/editar/:id", component: FormEmpleadoComponent, canActivate: [CheckAdminGuard, CheckLoginGuard] },
       { path: "riegos", component: RiegosComponent, canActivate: [CheckLoginGuard] },
       { path: "riego/añadir", component: FormRiegoComponent, canActivate: [CheckLoginGuard] },

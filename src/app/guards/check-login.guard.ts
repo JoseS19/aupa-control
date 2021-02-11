@@ -12,12 +12,11 @@ export class CheckLoginGuard implements CanActivate {
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree{
     const token = localStorage.getItem('token');
     if(token != null){
-      //return true;
+      return true;
     }else{
       this.router.navigate(['/login'])
       localStorage.clear();
-      //return false;
+      return false;
     }
-    return true;
   }
 }
