@@ -9,7 +9,7 @@ import { Superficie } from '../models/superficie';
 export class SuperficieService {
 
   
-  BASE_URL:string ='https://thawing-taiga-33568.herokuapp.com/api/auth';   //Api2
+  BASE_URL:string ='https://thawing-taiga-33568.herokuapp.com/api';   //Api2
   //BASE_URL:string ='http://127.0.0.1:8000/api';
  // BASE_URL:string ='https://stormy-gorge-53468.herokuapp.com/api';
   constructor(private httpClient:HttpClient) { }
