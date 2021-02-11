@@ -17,7 +17,6 @@ export class MapaComponent{
         this.zoom = 15;
         this.mapTypeId = 'hybrid';
         this.title.setTitle("Mapa - AUPA 5");
-        this.inicio();
     }
 
     superficies: Superficie[] =  [];
@@ -28,7 +27,7 @@ export class MapaComponent{
     zoom: number;
     mapTypeId: string;
     ngOnInit() {
-
+        this.inicio();
     }
 
     inicio(){
