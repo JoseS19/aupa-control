@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 import { Superficie, Coordenadas } from '../../models/superficie';
 import { SuperficieService } from '../../services/superficie.service'
 import { Title }  from '@angular/platform-browser';
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
 @Component({
     templateUrl: './mapa.component.html',
     styleUrls: ['./mapa.component.css']
@@ -12,8 +12,8 @@ import { from } from 'rxjs';
 export class MapaComponent{
 
     constructor(private superficieService: SuperficieService, private toastr: ToastrService, private title: Title, private router:Router){
-        this.lat = 26.279384;
-        this.lng = -108.997228;
+        this.lat = 26.259302;
+        this.lng = -108.981593;
         this.zoom = 15;
         this.mapTypeId = 'hybrid';
         this.title.setTitle("Mapa - AUPA 5");
@@ -37,6 +37,7 @@ export class MapaComponent{
         }else{
             this.getSuperficiesNoAdmin();
         }
+        
     }
 
     getSuperficies(){
@@ -45,21 +46,20 @@ export class MapaComponent{
             res => {
               this.superficies = res;
               this.fromatear_coords(res);
+              this.superficieService.getSuperficiesMapaRiego()
+              .subscribe(
+                  res => {
+                      this.superficiesRiego = res;
+                      this.unir();
+                  },
+                  err => this.toastr.error('No se pudieron obtener los datos de las superficies')
+              )  
             },
             err => {
                 this.toastr.error('No se pudieron obtener los datos de las superficies');
                 this.router.navigate(['menu'])
             }
-        )
-
-        this.superficieService.getSuperficiesMapaRiego()
-        .subscribe(
-            res => {
-                this.superficiesRiego = res;
-                this.unir();
-            },
-            err => this.toastr.error('No se pudieron obtener los datos de las superficies')
-        )        
+        )      
     }
 
     getSuperficiesNoAdmin(){
@@ -68,21 +68,20 @@ export class MapaComponent{
             res => {
               this.superficies = res;
               this.fromatear_coords(res);
+              this.superficieService.getSuperficiesMapaRiegoSeccion()
+              .subscribe(
+                  res => {
+                      this.superficiesRiego = res;
+                      this.unir();
+                  },
+                  err => this.toastr.error('No se pudieron obtener los datos de las superficies')
+              )    
             },
             err => {
                 this.toastr.error('No se pudieron obtener los datos de las superficies');
                 this.router.navigate(['menu'])
             }
-        )
-
-        this.superficieService.getSuperficiesMapaRiegoSeccion()
-        .subscribe(
-            res => {
-                this.superficiesRiego = res;
-                this.unir();
-            },
-            err => this.toastr.error('No se pudieron obtener los datos de las superficies')
-        )        
+        )    
     }
 
     unir(){

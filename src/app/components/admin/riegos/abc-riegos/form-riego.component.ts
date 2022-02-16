@@ -101,13 +101,12 @@ export class FormRiegoComponent{
   }
 
   submitRiego(){
-    console.log(this.riego);
     this.riego.ultima_mod = this.riego.inicio;
     this.riego.restante = this.riego.total;
     this.riegoService.createRiego(this.riego).subscribe(
       res=> {          
           this.toastr.success('Riego agregado correctamente');
-          //this.router.navigate(['/usuarios']);
+          this.router.navigate(['/riegos']);
         },
       err => {
         this.toastr.error('No se ha podido agregar el riego');
@@ -117,7 +116,6 @@ export class FormRiegoComponent{
 
   updateRiego(){
     this.riego.ultima_mod = this.riego.inicio;
-    console.log(this.riego);
     this.riegoService.updateRiego(this.riego.id_riego.toString(), this.riego)
     .subscribe(
       res=>{
@@ -125,7 +123,6 @@ export class FormRiegoComponent{
         this.router.navigate(['/riegos']);
       },
       err=>{
-        console.log(err);
         this.toastr.error('No se han podido actualizar los datos del riego');
       }
     )

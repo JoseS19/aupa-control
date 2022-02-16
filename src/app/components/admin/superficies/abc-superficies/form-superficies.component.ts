@@ -97,7 +97,7 @@ export class FormSuperficieComponent{
     this.superficieService.createSuperficie(this.superficie).subscribe(
       res=> {          
           this.toastr.success('Superficie agregada correctamente');
-          //this.router.navigate(['/usuarios']);
+          this.router.navigate(['/superficies']);
         },
       err => {
         this.toastr.error('No se ha podido agregar la superficie');

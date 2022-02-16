@@ -65,7 +65,7 @@ export class FormUsuarioComponent{
     this.usuarioService.createUsuario(this.usuario).subscribe(
       res=> {          
           this.toastr.success('Usuario agregado correctamente');
-          //this.router.navigate(['/usuarios']);
+          this.router.navigate(['/usuarios']);
         },
       err => {
         this.toastr.error('No se ha podido agregar al usuario');

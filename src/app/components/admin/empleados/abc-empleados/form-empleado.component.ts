@@ -88,7 +88,7 @@ export class FormEmpleadoComponent{
         this.pass_valid = false;
         return;
       }else{
-        this.empleadoService.updateEmpleado(this.empleado.id.toString(), this.empleado)
+        this.empleadoService.updateDatos(this.empleado)
         .subscribe(
           res=>{
             this.toastr.success('Empleado actualizado correctamente');
@@ -100,7 +100,9 @@ export class FormEmpleadoComponent{
         )
       }
     }else{
-      this.empleadoService.updateDatosNopass(this.empleado)
+        console.log(this.empleado);
+        this.empleado.password = null;
+        this.empleadoService.updateDatosNopass(this.empleado)
       .subscribe(
         res=>{
           this.toastr.success('Empleado actualizado correctamente');
